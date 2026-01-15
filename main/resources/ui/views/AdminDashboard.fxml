@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane styleClass="dashboard-container" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controllers.AdminDashboardController">
+
+    <!-- Left Sidebar -->
+    <left>
+        <VBox prefWidth="280" spacing="0" styleClass="sidebar">
+            <!-- Sidebar Header -->
+            <VBox spacing="4" styleClass="sidebar-header">
+                <Label styleClass="sidebar-title" text="🏥 Smart Healthcare" />
+                <Label styleClass="sidebar-user" text="Administrator" />
+                <Label styleClass="sidebar-user" text="System Admin" />
+            </VBox>
+
+            <!-- Navigation Menu -->
+            <VBox spacing="8" style="-fx-padding: 20;">
+                <Button onAction="#handleDashboard" styleClass="nav-item" text="📊 Dashboard">
+                    <graphic>
+                        <Text />
+                    </graphic>
+                </Button>
+                <Button onAction="#handleManageDoctors" styleClass="nav-item" text="👨‍⚕️ Manage Doctors">
+                    <graphic>
+                        <Text />
+                    </graphic>
+                </Button>
+                <Button onAction="#handleViewRecords" styleClass="nav-item" text="📋 View Records">
+                    <graphic>
+                        <Text />
+                    </graphic>
+                </Button>
+                <Button onAction="#handleAddDoctor" styleClass="nav-item" text="➕ Add Doctor">
+                    <graphic>
+                        <Text />
+                    </graphic>
+                </Button>
+                <Button styleClass="nav-item" text="📊 System Reports">
+                    <graphic>
+                        <Text />
+                    </graphic>
+                </Button>
+
+                <VBox VBox.vgrow="ALWAYS" />
+
+                <Button styleClass="nav-item logout" text="🚪 Logout">
+                    <graphic>
+                        <Text />
+                    </graphic>
+                </Button>
+            </VBox>
+        </VBox>
+    </left>
+
+    <!-- Main Content Area -->
+    <center>
+        <VBox styleClass="content-area">
+            <!-- Header -->
+            <HBox alignment="CENTER_LEFT" spacing="16" styleClass="header">
+                <VBox>
+                    <Label fx:id="dashboardTitle" styleClass="header-title" text="Admin Dashboard" />
+                    <Label fx:id="dashboardSubtitle" styleClass="header-subtitle" text="Manage the healthcare system" />
+                </VBox>
+                <HBox HBox.hgrow="ALWAYS" />
+                <Button onAction="#handleAddDoctor" styleClass="btn-primary" text="+ Add Doctor" />
+            </HBox>
+
+            <!-- Content Pane -->
+            <StackPane fx:id="contentPane" />
+        </VBox>
+    </center>
+</BorderPane>
