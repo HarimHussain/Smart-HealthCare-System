@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane styleClass="dashboard-container" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controllers.DoctorDashboardController">
+
+    <!-- Left Sidebar -->
+    <left>
+        <VBox prefWidth="280" spacing="0" styleClass="sidebar">
+            <!-- Sidebar Header -->
+            <VBox spacing="4" styleClass="sidebar-header">
+                <Label styleClass="sidebar-title" text="🏥 Smart Healthcare" />
+                <Label styleClass="sidebar-user" text="Dr. John Smith" />
+                <Label styleClass="sidebar-user" text="Cardiologist" />
+            </VBox>
+
+            <!-- Navigation Menu -->
+            <VBox spacing="8" style="-fx-padding: 20;">
+                <Button onAction="#handleDashboard" styleClass="nav-item" text="📊 Dashboard">
+                    <graphic>
+                        <Text />
+                    </graphic>
+                </Button>
+                <Button onAction="#handleSchedule" styleClass="nav-item" text="📅 My Schedule">
+                    <graphic>
+                        <Text />
+                    </graphic>
+                </Button>
+                <Button onAction="#handlePatients" styleClass="nav-item" text="👥 My Patients">
+                    <graphic>
+                        <Text />
+                    </graphic>
+                </Button>
+                <Button onAction="#handleAppointments" styleClass="nav-item" text="📋 Appointments">
+                    <graphic>
+                        <Text />
+                    </graphic>
+                </Button>
+
+                <VBox VBox.vgrow="ALWAYS" />
+
+                <Button onAction="#handleLogout" styleClass="nav-item" text="🚪 Logout">
+                    <graphic>
+                        <Text />
+                    </graphic>
+                </Button>
+            </VBox>
+        </VBox>
+    </left>
+
+    <!-- Main Content Area -->
+    <center>
+        <VBox styleClass="content-area">
+            <!-- Header -->
+            <HBox alignment="CENTER_LEFT" spacing="16" styleClass="header">
+                <VBox>
+                    <Label fx:id="dashboardTitle" styleClass="header-title" text="Doctor Dashboard" />
+                    <Label fx:id="dashboardSubtitle" styleClass="header-subtitle" text="Manage your medical practice" />
+                </VBox>
+                <HBox HBox.hgrow="ALWAYS" />
+                <Button styleClass="btn-primary" text="+ Add Availability" />
+            </HBox>
+
+            <!-- Content Pane -->
+            <StackPane fx:id="contentPane" />
+        </VBox>
+    </center>
+</BorderPane>
