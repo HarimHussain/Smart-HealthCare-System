@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ui.controllers.AdminDashboardController"
+            styleClass="dashboard-container">
+
+    <left>
+        <VBox styleClass="sidebar" prefWidth="250" spacing="10">
+            <VBox styleClass="sidebar-header" spacing="4">
+                <Label text="🏥 Healthcare" styleClass="sidebar-title"/>
+                <Label text="Administrator" styleClass="sidebar-subtitle"/>
+            </VBox>
+
+            <VBox spacing="5" style="-fx-padding: 15;">
+                <Button text="📊 Dashboard" styleClass="nav-btn"/>
+                <Button text="👨‍⚕️ Add Doctor" onAction="#handleAddDoctor" styleClass="nav-btn"/>
+                <Button text="📋 View Records" onAction="#handleViewRecords" styleClass="nav-btn"/>
+
+                <VBox VBox.vgrow="ALWAYS"/>
+                <Button text="🚪 Logout" onAction="#handleLogout" styleClass="nav-btn logout"/>
+            </VBox>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox styleClass="content" spacing="20">
+            <HBox styleClass="header" spacing="16" alignment="CENTER_LEFT">
+                <VBox>
+                    <Label fx:id="titleLabel" styleClass="header-title"/>
+                    <Label fx:id="subtitleLabel" styleClass="header-subtitle"/>
+                </VBox>
+                <HBox HBox.hgrow="ALWAYS"/>
+                <Button text="+ Add Doctor" onAction="#handleAddDoctor" styleClass="btn-primary"/>
+            </HBox>
+
+            <Label text="Admin dashboard - Manage the system" styleClass="card"/>
+        </VBox>
+    </center>
+</BorderPane>

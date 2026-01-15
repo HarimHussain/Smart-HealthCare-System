@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<VBox alignment="CENTER" spacing="20" styleClass="login-page"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="ui.controllers.LoginController">
+
+    <padding><Insets top="40" right="20" bottom="40" left="20"/></padding>
+
+    <!-- Header -->
+    <VBox alignment="CENTER" spacing="8">
+        <Label text="🏥" styleClass="logo"/>
+        <Label text="Smart Healthcare System" styleClass="title"/>
+        <Label text="Iqra University Health Center" styleClass="subtitle"/>
+    </VBox>
+
+    <!-- Login Form -->
+    <VBox styleClass="card" spacing="15" maxWidth="400">
+        <Label text="Login" styleClass="card-title"/>
+
+        <VBox spacing="12">
+            <TextField fx:id="emailField" promptText="Email"/>
+            <PasswordField fx:id="passwordField" promptText="Password"/>
+
+            <ComboBox fx:id="userTypeComboBox" promptText="Select user type">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Patient"/>
+                        <String fx:value="Doctor"/>
+                        <String fx:value="Admin"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+        </VBox>
+
+        <Label fx:id="errorLabel" styleClass="error" visible="false" wrapText="true"/>
+
+        <VBox spacing="8">
+            <Button text="Login" onAction="#handleLogin" styleClass="btn-primary"/>
+            <Button text="Register as Patient" onAction="#handleRegister" styleClass="btn-link"/>
+        </VBox>
+    </VBox>
+
+    <!-- Footer -->
+    <Label text="Department of Computer Science" styleClass="footer"/>
+</VBox>

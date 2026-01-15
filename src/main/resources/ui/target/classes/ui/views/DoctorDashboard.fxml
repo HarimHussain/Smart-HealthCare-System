@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.controllers.DoctorDashboardController">
+
+    <left>
+        <VBox styleClass="sidebar" prefWidth="250" spacing="10">
+            <VBox styleClass="sidebar-header">
+                <Label text="🏥 Healthcare" styleClass="sidebar-title"/>
+                <Label text="Doctor" styleClass="sidebar-subtitle"/>
+            </VBox>
+
+            <VBox spacing="5" style="-fx-padding: 15;">
+                <Button text="📊 Dashboard" onAction="#handleDashboard" styleClass="nav-btn"/>
+                <Button text="📅 My Schedule" onAction="#handleSchedule" styleClass="nav-btn"/>
+                <Button text="👥 Appointments" onAction="#handleAppointments" styleClass="nav-btn"/>
+
+                <VBox VBox.vgrow="ALWAYS"/>
+                <Button text="🚪 Logout" onAction="#handleLogout" styleClass="nav-btn logout"/>
+            </VBox>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox styleClass="content" spacing="20">
+            <HBox styleClass="header">
+                <VBox>
+                    <Label fx:id="titleLabel" styleClass="header-title"/>
+                    <Label fx:id="subtitleLabel" styleClass="header-subtitle"/>
+                </VBox>
+            </HBox>
+
+            <!-- Content would go here -->
+            <Label text="Doctor dashboard content" styleClass="card"/>
+        </VBox>
+    </center>
+</BorderPane>

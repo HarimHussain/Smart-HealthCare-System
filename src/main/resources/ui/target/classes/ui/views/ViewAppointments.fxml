@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="20" style="-fx-padding: 20;"
+      xmlns="http://javafx.com/javafx/17.0.12"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ui.controllers.ViewAppointmentsController">
+
+    <Label text="My Appointments" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Filter by status:"/>
+        <ComboBox fx:id="statusFilter" prefWidth="150"/>
+        <Button text="Apply" onAction="#handleFilter" styleClass="btn-secondary"/>
+        <HBox HBox.hgrow="ALWAYS"/>
+        <Button text="Cancel Selected" onAction="#handleCancelAppointment" styleClass="btn-danger"/>
+    </HBox>
+
+    <TableView fx:id="appointmentsTable" styleClass="card" prefHeight="300">
+        <!-- Columns are added programmatically -->
+    </TableView>
+</VBox>

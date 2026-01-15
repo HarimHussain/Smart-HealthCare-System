@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.controllers.PatientDashboardController">
+
+    <left>
+        <VBox styleClass="sidebar" prefWidth="250" spacing="10">
+            <VBox styleClass="sidebar-header">
+                <Label text="🏥 Healthcare" styleClass="sidebar-title"/>
+                <Label fx:id="userLabel" text="Patient" styleClass="sidebar-subtitle"/>
+            </VBox>
+
+            <VBox spacing="5" style="-fx-padding: 15;">
+                <Button text="📊 Dashboard" onAction="#handleDashboard" styleClass="nav-btn"/>
+                <Button text="📅 Book Appointment" onAction="#handleBookAppointment" styleClass="nav-btn"/>
+                <Button text="📋 My Appointments" onAction="#handleViewAppointments" styleClass="nav-btn"/>
+                <Button text="👤 Profile" onAction="#handleProfile" styleClass="nav-btn"/>
+
+                <VBox VBox.vgrow="ALWAYS"/>
+
+                <Button text="🚪 Logout" onAction="#handleLogout" styleClass="nav-btn logout"/>
+            </VBox>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox styleClass="content" spacing="20">
+            <HBox styleClass="header">
+                <VBox>
+                    <Label fx:id="titleLabel" text="Dashboard" styleClass="header-title"/>
+                    <Label fx:id="subtitleLabel" text="Welcome" styleClass="header-subtitle"/>
+                </VBox>
+                <HBox HBox.hgrow="ALWAYS"/>
+                <Button text="+ New Appointment" onAction="#handleBookAppointment" styleClass="btn-primary"/>
+            </HBox>
+
+            <StackPane fx:id="contentPane"/>
+        </VBox>
+    </center>
+</BorderPane>
